@@ -1,49 +1,49 @@
 # install
 
-> only use in vitepress project
+can only use in vitepress project
 
 - install package
 
-```bash
-cd project-folder
+  ```bash
+  cd project-folder
 
-npm i vitepress-plugin-sandpack
-```
+  npm i vitepress-plugin-sandpack
+  ```
 
 - edit config
 
-```diff
-import { defineConfig } from 'vitepress';
-import { useSandBox } from 'vitepress-plugin-sandpack';
+  ```diff
+  import { defineConfig } from 'vitepress';
+  import { useSandBox } from 'vitepress-plugin-sandpack';
 
-export default defineConfig({
-  // ...
+  export default defineConfig({
+    // ...
 
-+  markdown: {
-+    config(md) {
-+      useSandBox(md, 'sandbox');
-+    },
-+  },
+  +  markdown: {
+  +    config(md) {
+  +      useSandBox(md, 'sandbox');
+  +    },
+  +  },
 
-  // ...
-})
-```
+    // ...
+  })
+  ```
 
 - edit theme config
 
-```diff
-import DefaultTheme from 'vitepress/theme';
-+import { SandBox } from 'vitepress-plugin-sandpack';
+  ```diff
+  import DefaultTheme from 'vitepress/theme';
+  +import { SandBox } from 'vitepress-plugin-sandpack';
 
-export default {
-  ...DefaultTheme,
-  enhanceApp(ctx) {
-    DefaultTheme.enhanceApp(ctx);
-+    ctx.app.component('SandBox', SandBox);
-  },
-}
+  export default {
+    ...DefaultTheme,
+    enhanceApp(ctx) {
+      DefaultTheme.enhanceApp(ctx);
+  +    ctx.app.component('SandBox', SandBox);
+    },
+  }
 
-```
+  ```
 
 # document
 
@@ -55,10 +55,13 @@ export default {
 
 - code in markdown file
 
-![image](https://ik.imagekit.io/jerrywu001/sandbox-code_9ga23pVJA.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675322691473)
+  ![image](https://ik.imagekit.io/jerrywu001/sandbox-code.png)
 
 - preview in browser
 
-![](https://ik.imagekit.io/jerrywu001/sandbox-demo1_PsFSfd_X_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675322867870)
+  light mode
 
-![](https://ik.imagekit.io/jerrywu001/sandbox-demo2_rlVXV97ZJ.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675322867747)
+  ![](https://ik.imagekit.io/jerrywu001/sandbox-demo1.png)
+
+  dark mode
+  ![](https://ik.imagekit.io/jerrywu001/sandbox-demo2.png)
