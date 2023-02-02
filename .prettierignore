@@ -1,0 +1,15 @@
+# https://prettier.io/docs/en/options.html#parser
+
+build
+dist
+.vscode
+.husky
+node_modules
+*.log*
+.DS_Store
+.code
+*.iml
+package-lock.json
+yarn.lock
+
+__unconfig_vite.config.ts
