@@ -14,7 +14,7 @@ npm i vitepress-plugin-sandpack
 
 ```diff
 import { defineConfig } from 'vitepress';
-import { useSandBox } from '../../../src/plugin';
+import { useSandBox } from 'vitepress-plugin-sandpack';
 
 export default defineConfig({
   // ...

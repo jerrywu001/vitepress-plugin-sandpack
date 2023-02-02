@@ -52,6 +52,7 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
 
+      # https://github.com/antfu/changelogithub/issues/24
       - run: npx changelogithub
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
