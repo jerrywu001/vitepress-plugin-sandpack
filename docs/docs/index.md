@@ -13,5 +13,5 @@ hero:
       link: /get-started/introduction
     - theme: alt
       text: View on GitHub
-      link: https://github.com/codes-templates/npm-vue3
+      link: https://github.com/jerrywu001/vitepress-plugin-sandpack
 ---
