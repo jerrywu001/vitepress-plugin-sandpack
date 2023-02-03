@@ -19,11 +19,8 @@ const useSandBox = (md: MarkdownIt, componentName = 'sandbox') => {
             attrs.push(tokens[i].info);
           }
         }
-        return `<SandBox attrs="${encodeURIComponent(
-          JSON.stringify(attrs),
-        )}" ${tokens[idx].attrs
-          ?.map(([key, val]) => (val ? `${key}="${val}"` : key))
-          .join(' ')}>`;
+        const props = tokens[idx].attrs?.map(([key, val]) => (val ? `${key}="${val}"` : key)) || [];
+        return `<SandBox codeOptions="${encodeURIComponent(JSON.stringify(attrs))}" ${props.join(' ')}>`;
       }
       return '</SandBox>';
     },

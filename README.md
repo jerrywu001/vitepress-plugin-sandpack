@@ -1,3 +1,5 @@
+![](https://www.js-bridge.com/articles/sandpack.png)
+
 # install
 
 can only use in vitepress project
@@ -7,14 +9,14 @@ can only use in vitepress project
   ```bash
   cd project-folder
 
-  npm i vitepress-plugin-sandpack
+  npm i vitepress-plugin-sandpack -D
   ```
 
 - edit config
 
   ```diff
   import { defineConfig } from 'vitepress';
-  import { useSandBox } from 'vitepress-plugin-sandpack';
+  +import { useSandBox } from 'vitepress-plugin-sandpack';
 
   export default defineConfig({
     // ...
@@ -47,7 +49,7 @@ can only use in vitepress project
 
 # document
 
-[Full document](https://vitepress-sandbox.netlify.app)
+[Full document](https://vitepress-sandbox.js-bridge.com)
 
 ## how to use
 

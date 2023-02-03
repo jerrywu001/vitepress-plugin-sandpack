@@ -1,5 +1,7 @@
 import DefaultTheme from 'vitepress/theme';
-import { SandBox } from '../../../../dist/esm';
+// import { SandBox } from '../../../../dist/esm';
+// @ts-ignore
+import SandBox from '../../../../src/components/SandBox.vue';
 
 export default {
   ...DefaultTheme,

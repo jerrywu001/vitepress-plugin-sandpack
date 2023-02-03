@@ -12,7 +12,7 @@
     "sandpack-vue3",
     "codesandpack"
   ],
-  "homepage": "https://vitepress-sandbox.netlify.app",
+  "homepage": "https://vitepress-sandbox.js-bridge.com",
   "bugs": {
     "url": "https://github.com/jerrywu001/vitepress-plugin-sandpack/issues"
   },
@@ -36,8 +36,8 @@
   ],
   "scripts": {
     "build": "vite build",
-    "docs": "npm run build && npm run docs:dev -w docs",
-    "build:docs": "npm run build && npm run docs:build -w docs",
+    "docs": "npm run docs:dev -w docs",
+    "build:docs": "npm run docs:build -w docs",
     "preview:docs": "npm run docs:serve -w docs",
     "lint": "eslint --ext .ts,.tsx,.vue ./src",
     "prepare": "chmod a+x .husky/* && husky install",

@@ -1,12 +1,12 @@
 import { defineConfig } from 'vitepress';
-import { version } from '../../package.json';
+import { version } from '../../../package.json';
 import { useSandBox } from '../../../src/plugin';
 import path from 'path';
 
 export default defineConfig({
   lang: 'en-US',
   title: 'vitepress sandbox',
-  description: 'use sandpack-vue3 as directive in vitepress doc',
+  description: 'Use sandpack-vue3 as directive in vitepress doc',
   lastUpdated: true,
 
   markdown: {

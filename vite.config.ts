@@ -12,7 +12,7 @@ export default defineConfig({
     },
   },
   build: {
-    minify: false,
+    minify: true,
     lib: {
       fileName: (type) => {
         if (type === 'es') return 'esm/index.js';
@@ -26,6 +26,7 @@ export default defineConfig({
     rollupOptions: {
       external: [
         'vue',
+        'vue/server-renderer',
         'vite',
         'vitepress',
         'sandpack-vue3',
