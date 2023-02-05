@@ -1,2 +1,6 @@
 // @ts-ignore
-export { default as SandBox } from './SandBox.vue';
+export { default as Sandbox } from './Sandbox.vue';
+
+export * from './SandpackUtil';
+
+export * from './prop';

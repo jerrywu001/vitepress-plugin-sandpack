@@ -1,10 +1,3 @@
-<template>
-  <code-panel :value="code" />
-</template>
-
-<script setup>
-import CodePanel from '../components/CodePanel.vue';
-
 const code = `::: sandbox
 \`\`\`vue /src/App.vue [active]
 <template>
@@ -24,5 +17,6 @@ import { createApp } from 'vue';
 
 createApp(App).mount('#app');
 \`\`\`
-:::`
-</script>
+:::`;
+
+export default code;

@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress';
+import container from 'markdown-it-container';
 import { version } from '../../../package.json';
-import { useSandBox } from '../../../src/plugin';
+import renderSandbox from '../../../src/plugin';
 import path from 'path';
 
 export default defineConfig({
@@ -8,10 +9,28 @@ export default defineConfig({
   title: 'vitepress sandbox',
   description: 'Use sandpack-vue3 as directive in vitepress doc',
   lastUpdated: true,
+  cleanUrls: true,
+
+  head: [
+    [
+      'link',
+      { rel: 'stylesheet', href: 'https://cdn.staticfile.org/highlight.js/11.7.0/styles/atom-one-dark.min.css' },
+    ],
+  ],
 
   markdown: {
     config(md) {
-      useSandBox(md, 'sandbox');
+      md
+        .use(container, 'sandbox', { // the second parameter is html tag name
+          render (tokens, idx) {
+            return renderSandbox(tokens, idx, 'sandbox');
+          },
+        })
+        .use(container, 'my-sandbox', {
+          render (tokens, idx) {
+            return renderSandbox(tokens, idx, 'my-sandbox');
+          },
+        });
     },
   },
 
@@ -66,7 +85,28 @@ function sidebarConfig() {
       collapsible: true,
       items: [
         { text: 'Introduction', link: '/get-started/introduction' },
+        { text: 'Install', link: '/get-started/install' },
       ]
     },
+    {
+      text: 'Props Introduction',
+      collapsible: true,
+      items: [
+        { text: 'Props', link: '/api-reference/api' },
+      ],
+    },
+    {
+      text: 'Basic Usage',
+      collapsible: true,
+      items: [
+      ],
+    },
+    {
+      text: 'Custom Usage',
+      collapsible: true,
+      items: [
+        { text: 'Custom Usage', link: '/custom-usage/custom' },
+      ],
+    }
   ];
 }

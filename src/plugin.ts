@@ -1,30 +1,45 @@
-import type MarkdownIt from 'markdown-it';
-import container from 'markdown-it-container';
-import type { RenderRule } from 'markdown-it/lib/renderer';
+import Token from 'markdown-it/lib/token';
 
-const useSandBox = (md: MarkdownIt, componentName = 'sandbox') => {
-  md.use(container, componentName, {
-    render(tokens, idx) {
-      if (tokens[idx].nesting === 1) {
-        const attrs: string[] = [];
-        for (
-          let i = idx + 1;
-          !(
-            tokens[i].nesting === -1 &&
-            tokens[i].type === 'container_sandbox_close'
-          );
-          ++i
-        ) {
-          if (tokens[i].type === 'fence' && tokens[i].tag === 'code') {
-            attrs.push(tokens[i].info);
-          }
-        }
-        const props = tokens[idx].attrs?.map(([key, val]) => (val ? `${key}="${val}"` : key)) || [];
-        return `<SandBox codeOptions="${encodeURIComponent(JSON.stringify(attrs))}" ${props.join(' ')}>`;
-      }
-      return '</SandBox>';
-    },
-  } satisfies { render: RenderRule });
+/**
+ * @param htmlTag
+ * @description htmltag name to component name
+ * ```js
+ * 'sanbox' -> 'Sandbox'
+ * 'sandbox-react' -> SandboxReact
+ * ```
+ */
+const getComponentName = (tagName: string) => {
+  const chars = tagName.split('-');
+  return chars.map(a => a.substring(0, 1).toUpperCase() + a.substring(1)).join('-');
 };
 
-export { useSandBox };
+/**
+ * @param htmlTag
+ * @description htmltag name to component name
+ * ```js
+ * 'sanbox' -> 'Sandbox'
+ * 'sandbox-react' -> SandboxReact
+ * ```
+ */
+const renderSandbox = (tokenList: Token[], index: number, htmlTagName: string) => {
+  const renderFunc = (tokens: Token[], idx: number, htmlTag: string) => {
+    if (tokens[idx].nesting === 1) {
+      const fileAttr: string[] = [];
+      for (
+        let i = idx + 1;
+        tokens[i] && !(tokens[i].nesting === -1 && tokens[i].type === 'container_sandbox_close');
+        ++i
+      ) {
+        if (tokens[i].type === 'fence' && tokens[i].tag === 'code') {
+          fileAttr.push(tokens[i]?.info);
+        }
+      }
+      const attrs = tokens[idx].attrs?.map(([key, val]) => (val ? `${key}="${val}"` : key)) || [];
+      return `<${getComponentName(htmlTag)} codeOptions="${encodeURIComponent(JSON.stringify(fileAttr))}" ${attrs.join(' ')}>`;
+    }
+    return `</${getComponentName(htmlTag)}>`;
+  };
+  return renderFunc(tokenList, index, htmlTagName);
+};
+
+export default renderSandbox;

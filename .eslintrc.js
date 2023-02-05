@@ -38,6 +38,7 @@ module.exports = {
     'no-nested-ternary': 'off',
     'no-spaced-func': 'off',
     'import/no-unresolved': 'off',
+    'import/no-relative-packages': 'off',
     // 代码风格
     'vue/multi-word-component-names': 'off',
     'arrow-parens': 'off',
