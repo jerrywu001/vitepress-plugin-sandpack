@@ -9,7 +9,6 @@ export default defineConfig({
   title: 'vitepress sandbox',
   description: 'Use sandpack-vue3 as directive in vitepress doc',
   lastUpdated: true,
-  cleanUrls: true,
 
   head: [
     [

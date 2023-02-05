@@ -31,7 +31,6 @@ Language support: `angular` | `react` | `react-ts` | `vanilla` | `vanilla-ts` | 
   }
 
   ```
-  ```
 
 - edit config
 
@@ -69,7 +68,7 @@ Language support: `angular` | `react` | `react-ts` | `vanilla` | `vanilla-ts` | 
 
 [Full document](https://vitepress-sandbox.js-bridge.com)
 
-[Custom usage](https://vitepress-sandbox.js-bridge.com/custom-usage/custom)
+[Custom usage](https://vitepress-sandbox.js-bridge.com/custom-usage/custom.html)
 
 ## how to use
 
