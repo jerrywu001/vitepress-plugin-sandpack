@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress';
 import container from 'markdown-it-container';
 import { version } from '../../../package.json';
-import renderSandbox from '../../../src/plugin';
+import { renderSandbox } from '../../../src';
 import path from 'path';
 
 export default defineConfig({
