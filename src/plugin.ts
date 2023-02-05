@@ -1,5 +1,3 @@
-import Token from 'markdown-it/lib/token';
-
 /**
  * @param htmlTag
  * @description htmltag name to component name
@@ -21,8 +19,8 @@ const getComponentName = (tagName: string) => {
  * 'sandbox-react' -> SandboxReact
  * ```
  */
-const renderSandbox = (tokenList: Token[], index: number, htmlTagName: string) => {
-  const renderFunc = (tokens: Token[], idx: number, htmlTag: string) => {
+const renderSandbox = (tokenList: any[], index: number, htmlTagName: string) => {
+  const renderFunc = (tokens: any[], idx: number, htmlTag: string) => {
     if (tokens[idx].nesting === 1) {
       const fileAttr: string[] = [];
       for (
