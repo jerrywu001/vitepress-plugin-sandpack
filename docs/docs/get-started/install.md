@@ -60,6 +60,6 @@ export default defineConfig({
 
 then `npm run docs:dev`
 
-## Custom Usage
+## Usage
 
-[custom usage](/custom-usage/custom)
+[basic usage](./../basic-usage/entry.md)

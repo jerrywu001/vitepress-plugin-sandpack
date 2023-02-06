@@ -88,23 +88,20 @@ function sidebarConfig() {
       ]
     },
     {
-      text: 'Props Introduction',
-      collapsible: true,
-      items: [
-        { text: 'Props', link: '/api-reference/api' },
-      ],
-    },
-    {
       text: 'Basic Usage',
       collapsible: true,
       items: [
+        { text: 'Entry File', link: '/basic-usage/entry' },
+        { text: 'Custom File', link: '/basic-usage/custom-file-content' },
+        { text: 'Templates', link: '/basic-usage/templates' },
+        { text: 'Themes', link: '/basic-usage/themes' },
       ],
     },
     {
       text: 'Custom Usage',
       collapsible: true,
       items: [
-        { text: 'Custom Usage', link: '/custom-usage/custom' },
+        { text: 'Custom Dependencies', link: '/custom-usage/custom' },
       ],
     }
   ];

@@ -2,43 +2,77 @@
 import deps from '../codes/custom-usage/Deps.ts';
 </script>
 
-# Custom usage
-
-> custom dependencies
+# Custom Dependencies
 
 ## Create a custom component, extends from Sandbox.vue
 
 > in `customSetup` prop, we add some dependencies, like `vue3-toastify`
+>
+> `Tsx` is highly recommended. Compared to `vue single file`, it is simple and straightforward.
 
-**`MySandbox.vue`**
+::: code-group
+```tsx [write with .tsx]
+// MySandbox.tsx
+import { defineComponent } from 'vue';
+import { Sandbox, sandboxProps } from 'vitepress-plugin-sandpack';
 
-```vue
+/**
+ * extends from Sandbox.
+ * Compared to VUE single file, it is simple and straightforward.
+ */
+export const MySandbox = defineComponent({
+  name: 'MySandbox',
+  props: sandboxProps,
+  setup(props, { slots }) {
+    return () => (
+      <Sandbox
+        {...props}
+        options={{
+          showLineNumbers: true,
+        }}
+        customSetup={{
+          deps: {
+            'vue3-toastify': 'latest',
+          },
+        }}
+      >
+        { slots?.default ? slots.default() : null }
+      </Sandbox>
+    );
+  },
+});
+```
+
+```vue [write with .vue]
+<!-- MySandbox.vue -->
 <template>
+  <!-- 'code-options' is a build-in prop, do not edit it -->
   <Sandbox
+    :rtl="rtl"
     :template="template"
     :light-theme="lightTheme"
     :dark-theme="darkTheme"
-    :rtl="rtl"
-    :code-options="codeOptions"
-    :options="getSandpackOptions(props)"
+    :options="{
+      ...props, // do not forget it
+      showLineNumbers: true,
+    }"
     :custom-setup="{
+      ...props, // do not forget it
       deps: { 'vue3-toastify': 'latest' }
     }"
+    :code-options="codeOptions"
   >
     <slot />
   </Sandbox>
 </template>
 
 <script setup lang="ts">
-import {
-  Sandbox,
-  sandboxProps,
-  getSandpackOptions,
-} from 'vitepress-plugin-sandpack';
+import { Sandbox, sandboxProps } from 'vitepress-plugin-sandpack';
 
 const props = defineProps(sandboxProps);
 </script>
 ```
+:::
 
 ## edit theme config, register global component
 

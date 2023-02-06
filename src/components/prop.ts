@@ -171,7 +171,7 @@ export interface SandpackProp extends SandpackOptions, SandpackCustomSetup {
    */
   customSetup?: SandpackCustomSetup;
 
-  /** this is a build-in prop */
+  /** this is a build-in prop, do not edit it */
   codeOptions?: string;
 }
 
@@ -405,7 +405,7 @@ const sandboxProps = {
     required: false,
     default: undefined,
   },
-  /** this is a build-in prop */
+  /** this is a build-in prop, do not edit it */
   codeOptions: {
     type: String,
     required: false,

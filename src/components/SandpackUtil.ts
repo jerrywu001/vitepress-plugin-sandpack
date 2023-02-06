@@ -117,8 +117,8 @@ const getSandpackFiles = async (props: SandpackProp, slot: Slots) => {
 
 const getSandpackOptions = (props = {} as SandpackProp) => {
   const { options: opts } = props;
-  const options = opts && typeof opts === 'object' ? opts : undefined;
-  return options || {
+  const options = opts && typeof opts === 'object' ? { ...opts } : {};
+  const result = {
     autorun: parsedBoolean(props.autorun),
     editorWidthPercentage: isNaN(Number(props.editorWidthPercentage)) ? 50 : Number(props.editorWidthPercentage),
     showNavigator: parsedBoolean(props.showNavigator),
@@ -133,26 +133,42 @@ const getSandpackOptions = (props = {} as SandpackProp) => {
     readOnly: parsedBoolean(props.readOnly),
     showReadOnly: parsedBoolean(props.showReadOnly),
   };
+  for (const key in options) {
+    if (key in result) {
+      if (key !== 'editorWidthPercentage') {
+        result[key] = parsedBoolean(options[key]);
+      } else {
+        result.editorWidthPercentage =
+          isNaN(Number(options.editorWidthPercentage)) ? 50 : Number(options.editorWidthPercentage);
+      }
+    }
+  }
+  return result;
 };
 
 const getCustomSetupFromProps = (props: SandpackProp) => {
   const { deps, devDeps, entry, customSetup } = props;
   const setup = customSetup && typeof customSetup === 'object' ? customSetup : undefined;
-  if (setup) {
-    return {
-      dependencies: parsedDeps(setup.deps),
-      devDependencies: parsedDeps(setup.devDeps),
-      entry: entry || undefined,
-      npmRegistries: setup.npmRegistries,
-    };
-  } else if (deps || devDeps || entry) {
-    return {
-      dependencies: parsedDeps(deps),
-      devDependencies: parsedDeps(devDeps),
-      entry: entry || undefined,
-    };
+  const result = {
+    dependencies: undefined,
+    devDependencies: undefined,
+    entry: undefined,
+    npmRegistries: undefined,
+  } as any;
+
+  if (deps || devDeps || entry) {
+    result.dependencies = parsedDeps(deps);
+    result.devDependencies = parsedDeps(devDeps);
+    result.entry = entry || undefined;
   }
-  return undefined;
+  if (setup) {
+    result.dependencies = parsedDeps(setup.deps);
+    result.devDependencies = parsedDeps(setup.devDeps);
+    result.entry = setup.entry;
+    result.npmRegistries = setup.npmRegistries;
+  }
+
+  return result;
 };
 
 export {
