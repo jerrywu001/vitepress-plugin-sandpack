@@ -4,7 +4,7 @@
 
 This is plugin for vitepress that give you the power of editable sandboxes that run in the browser.
 
-Language support: `angular` | `react` | `react-ts` | `vanilla` | `vanilla-ts` | `vue` | `vue3` | `vue3-ts` | `svelte` | `solid`.
+Language support: `angular` | `react` | `react-ts` | `vanilla` | `vanilla-ts` | `vue` | `vue3` | `vue3-ts` | `svelte` | `solid` | `test-ts`.
 
 
 - install package

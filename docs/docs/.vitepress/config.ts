@@ -25,9 +25,9 @@ export default defineConfig({
             return renderSandbox(tokens, idx, 'sandbox');
           },
         })
-        .use(container, 'my-sandbox', {
+        .use(container, 'opts-sandbox', {
           render (tokens, idx) {
-            return renderSandbox(tokens, idx, 'my-sandbox');
+            return renderSandbox(tokens, idx, 'opts-sandbox');
           },
         });
     },
@@ -92,9 +92,13 @@ function sidebarConfig() {
       collapsible: true,
       items: [
         { text: 'Entry File', link: '/basic-usage/entry' },
+        { text: 'Default active File', link: '/basic-usage/active' },
         { text: 'Custom File', link: '/basic-usage/custom-file-content' },
         { text: 'Templates', link: '/basic-usage/templates' },
         { text: 'Themes', link: '/basic-usage/themes' },
+        { text: 'Hidden some file', link: '/basic-usage/hidden' },
+        { text: 'RTL Layout', link: '/basic-usage/rtl' },
+        { text: 'Options', link: '/basic-usage/options' },
       ],
     },
     {
@@ -102,6 +106,7 @@ function sidebarConfig() {
       collapsible: true,
       items: [
         { text: 'Custom Dependencies', link: '/custom-usage/custom' },
+        { text: 'Custom Options', link: '/custom-usage/custom-options' },
       ],
     }
   ];

@@ -1,18 +1,18 @@
 <script setup>
-import deps from '../codes/custom-usage/Deps.ts';
+import opts from '../codes/custom-usage/options.ts';
 </script>
 
-# Custom Dependencies
+# Custom Options
 
 ## Create a custom component, extends from Sandbox.vue
 
-> in `customSetup` prop, we add some dependencies, like `vue3-toastify`.
->
+> we change the `showLineNumbers resizablePanels closableTabs`.
+
 > `Tsx` is highly recommended. Compared to `vue single file`, it is simple and straightforward.
 
 ::: code-group
 ```tsx [write with .tsx]
-// MySandbox.tsx
+// OptsSandbox.tsx
 import { defineComponent } from 'vue';
 import { Sandbox, sandboxProps } from 'vitepress-plugin-sandpack';
 
@@ -20,8 +20,8 @@ import { Sandbox, sandboxProps } from 'vitepress-plugin-sandpack';
  * extends from Sandbox.
  * Compared to VUE single file, it is simple and straightforward.
  */
-export const MySandbox = defineComponent({
-  name: 'MySandbox',
+export const OptsSandbox = defineComponent({
+  name: 'OptsSandbox',
   props: sandboxProps,
   setup(props, { slots }) {
     return () => (
@@ -29,11 +29,8 @@ export const MySandbox = defineComponent({
         {...props}
         options={{
           showLineNumbers: true,
-        }}
-        customSetup={{
-          deps: {
-            'vue3-toastify': 'latest',
-          },
+          resizablePanels: false,
+          closableTabs: true,
         }}
       >
         { slots?.default ? slots.default() : null }
@@ -44,7 +41,7 @@ export const MySandbox = defineComponent({
 ```
 
 ```vue [write with .vue]
-<!-- MySandbox.vue -->
+<!-- OptsSandbox.vue -->
 <template>
   <!-- 'code-options' is a build-in prop, do not edit it -->
   <Sandbox
@@ -55,10 +52,11 @@ export const MySandbox = defineComponent({
     :options="{
       ...props, // do not forget it
       showLineNumbers: true,
+      resizablePanels: false,
+      closableTabs: true,
     }"
     :custom-setup="{
       ...props, // do not forget it
-      deps: { 'vue3-toastify': 'latest' }
     }"
     :code-options="codeOptions"
   >
@@ -81,14 +79,14 @@ const props = defineProps(sandboxProps);
 ```diff
 import DefaultTheme from 'vitepress/theme';
 import Sandbox from 'vitepress-plugin-sandpack';
-+import MySandbox from 'you-dir/MySandbox.vue';
++import OptsSandbox from 'you-dir/OptsSandbox.vue';
 
 export default {
   ...DefaultTheme,
   enhanceApp(ctx) {
     DefaultTheme.enhanceApp(ctx);
     ctx.app.component('Sandbox', Sandbox);
-+    ctx.app.component('MySandbox', MySandbox);
++    ctx.app.component('OptsSandbox', OptsSandbox);
   },
 }
 ```
@@ -118,9 +116,9 @@ export default defineConfig({
             return renderSandbox(tokens, idx, 'sandbox');
           },
         })
-        .use(container, 'my-sandbox', {
+        .use(container, 'opts-sandbox', {
           render (tokens, idx) {
-            return renderSandbox(tokens, idx, 'my-sandbox');
+            return renderSandbox(tokens, idx, 'opts-sandbox');
           },
         });
     },
@@ -134,30 +132,25 @@ export default defineConfig({
 > Go through the above steps, `vue3-toastify` can be found.
 
 ::: details code of usage
-<CodePanel :value="deps" />
+<CodePanel :value="opts" />
 :::
 
-::: my-sandbox {lightTheme=githubLight}
-```vue /src/App.vue
-<script setup>
-// now, vue3-toastify can be found
-import { toast } from 'vue3-toastify';
-import 'vue3-toastify/dist/index.css';
+::: opts-sandbox {template=vue3-ts}
+```js /src/person.ts
+const name = 'Tom';
+export { name };
+```
 
-const notify = () => {
-  toast.success(
-    "Success Notification!",
-    {
-      position: toast.POSITION.BOTTOM_CENTER,
-    },
-  );
-};
+```vue /src/App.vue
+<script setup lang="ts">
+import { ref } from 'vue';
+import { name } from './person.ts';
+
+const person = ref<string>(name);
 </script>
 
 <template>
-  <div>
-    <button @click="notify">Notify !</button>
-  </div>
+  <h1>Hi, I am {{ person }}</h1>
 </template>
 ```
 :::

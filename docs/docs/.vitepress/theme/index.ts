@@ -4,6 +4,8 @@ import CodePanel from '../../components/CodePanel.vue';
 // @ts-ignore
 import MySandbox from '../../components/MySandbox.vue';
 // @ts-ignore
+import OptsSandbox from '../../components/OptsSandbox.vue';
+// @ts-ignore
 import Sandbox from '../../../../src/components/Sandbox.vue';
 
 // for build test
@@ -15,6 +17,7 @@ export default {
     DefaultTheme.enhanceApp(ctx);
     ctx.app.component('Sandbox', Sandbox);
     ctx.app.component('MySandbox', MySandbox);
+    ctx.app.component('OptsSandbox', OptsSandbox);
     ctx.app.component('CodePanel', CodePanel);
   },
 }
