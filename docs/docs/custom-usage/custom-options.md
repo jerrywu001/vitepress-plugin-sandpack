@@ -7,7 +7,7 @@ import opts from '../codes/custom-usage/options.ts';
 ## Create a custom component, extends from Sandbox.vue
 
 > we change the `showLineNumbers resizablePanels closableTabs`.
-
+>
 > `Tsx` is highly recommended. Compared to `vue single file`, it is simple and straightforward.
 
 ::: code-group
