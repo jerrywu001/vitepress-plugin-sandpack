@@ -25,6 +25,11 @@ export default defineConfig({
             return renderSandbox(tokens, idx, 'sandbox');
           },
         })
+        .use(container, 'my-sandbox', {
+          render (tokens, idx) {
+            return renderSandbox(tokens, idx, 'my-sandbox');
+          },
+        })
         .use(container, 'opts-sandbox', {
           render (tokens, idx) {
             return renderSandbox(tokens, idx, 'opts-sandbox');

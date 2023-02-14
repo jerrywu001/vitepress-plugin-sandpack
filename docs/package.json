@@ -9,6 +9,6 @@
   },
   "devDependencies": {
     "highlight.js": "^11.7.0",
-    "vitepress": "^1.0.0-alpha.45"
+    "vitepress": "^1.0.0-alpha.46"
   }
 }
