@@ -103,6 +103,7 @@ function sidebarConfig() {
         { text: 'Themes', link: '/basic-usage/themes' },
         { text: 'Hidden some file', link: '/basic-usage/hidden' },
         { text: 'RTL Layout', link: '/basic-usage/rtl' },
+        { text: 'Use snippets', link: '/basic-usage/snippets' },
         { text: 'Options', link: '/basic-usage/options' },
       ],
     },

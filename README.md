@@ -87,3 +87,7 @@ Language support: `angular` | `react` | `react-ts` | `vanilla` | `vanilla-ts` | 
 
   dark mode
   ![](https://ik.imagekit.io/jerrywu001/sandbox-demo2.png)
+
+## use file snippets
+
+[File snippets](https://vitepress-sandbox.js-bridge.com/basic-usage/snippets.html)

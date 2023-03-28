@@ -15,6 +15,7 @@ import { getSandpackFiles, getCustomSetupFromProps, parsedBoolean, getSandpackOp
 import { Sandpack, type SandpackFiles } from 'sandpack-vue3';
 import { computed, onBeforeMount, ref, useSlots, watch } from 'vue';
 import { sandboxProps, type Theme } from './prop';
+// @ts-ignore
 import { useData } from 'vitepress';
 
 const props = defineProps(sandboxProps);
