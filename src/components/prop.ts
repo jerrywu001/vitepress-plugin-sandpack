@@ -14,10 +14,25 @@ export interface SandpackOptions {
    */
   autorun?: PropBool;
   /**
-   * editor div width, default 50 -> 50%
-   * @default 50
+   * hide code editor
+   * @default true
+   */
+  hideEditor?: PropBool;
+  /**
+   * deprecated from 0.3.0
+   * @deprecated
    */
   editorWidthPercentage?: number | string;
+  /**
+   * preview area height, default undefined
+   * @default undefined
+   */
+  previewHeight?: number;
+  /**
+   * editor area height, default undefined
+   * @default undefined
+   */
+  coderHeight?: number;
   /**
    * show route navigator in preview area
    * @default false
@@ -204,6 +219,15 @@ const sandboxProps = {
     default: 'vue3',
   },
   /**
+   * hide code editor
+   * @default false
+   */
+  hideEditor: {
+    type: [Boolean, String] as PropType<PropBool>,
+    required: false,
+    default: false,
+  },
+  /**
    * right to left layout
    * @default false
    */
@@ -232,13 +256,22 @@ const sandboxProps = {
     default: true,
   },
   /**
-   * editor div width, default 50 -> 50%
-   * @default 50
+   * preview area height, default undefined
+   * @default undefined
    */
-  editorWidthPercentage: {
-    type: [String, Number],
+  previewHeight: {
+    type: Number,
     required: false,
-    default: 50,
+    default: undefined,
+  },
+  /**
+   * editor area height, default undefined
+   * @default undefined
+   */
+  coderHeight: {
+    type: Number,
+    required: false,
+    default: undefined,
   },
   /**
    * show route navigator in preview area

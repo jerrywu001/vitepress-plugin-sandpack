@@ -114,6 +114,22 @@ function sidebarConfig() {
         { text: 'Custom Dependencies', link: '/custom-usage/custom' },
         { text: 'Custom Options', link: '/custom-usage/custom-options' },
       ],
-    }
+    },
+    {
+      text: 'vite templates',
+      collapsible: true,
+      items: [
+        { text: 'astro', link: '/vite-templates/astro' },
+        { text: 'vite', link: '/vite-templates/vite' },
+        { text: 'vite-vue', link: '/vite-templates/vite-vue' },
+        { text: 'vite-vue-ts', link: '/vite-templates/vite-vue-ts' },
+        { text: 'vite-react', link: '/vite-templates/vite-react' },
+        { text: 'vite-react-ts', link: '/vite-templates/vite-react-ts' },
+        { text: 'vite-svelte', link: '/vite-templates/vite-svelte' },
+        { text: 'vite-svelte-ts', link: '/vite-templates/vite-svelte-ts' },
+        { text: 'vite-solid', link: '/vite-templates/vite-solid' },
+        { text: 'vite-lit', link: '/vite-templates/vite-lit' },
+      ],
+    },
   ];
 }

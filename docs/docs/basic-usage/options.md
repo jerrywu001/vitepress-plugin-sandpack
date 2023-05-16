@@ -1,8 +1,10 @@
 # Options
 
 <script setup>
+import hideEditor from '../codes/options/hideEditor.ts';
 import autorun from '../codes/options/autorun.ts';
-import editorWidthPercentage from '../codes/options/width.ts';
+import previewHeight from '../codes/options/height.ts';
+import coderHeight from '../codes/options/editorHeight.ts';
 import navigator from '../codes/options/navigator.ts';
 import linenumbers from '../codes/options/linenumbers.ts';
 import refresh from '../codes/options/refresh.ts';
@@ -17,6 +19,17 @@ import showReadOnly from '../codes/options/showReadOnly.ts';
 import readOnlyPer from '../codes/options/readOnlyPer.ts';
 </script>
 
+## hideEditor <small style="font-size: 12px; color: var(--vp-c-green);">from @0.3.0</small>
+
+`default: false`
+
+::: details markdown code
+<CodePanel :value="hideEditor" />
+:::
+
+::: sandbox {hideEditor}
+:::
+
 ## autorun
 
 `default: true`
@@ -30,15 +43,47 @@ set `autorun=false`，then you should click the run button in editor area.
 ::: sandbox {autorun=false}
 :::
 
-## editorWidthPercentage
+## coderHeight <small style="font-size: 12px; color: var(--vp-c-green);">from @0.3.0</small>
 
-`default: 50`
+`default: undefined`
 
 ::: details markdown code
-<CodePanel :value="editorWidthPercentage" />
+<CodePanel :value="coderHeight" />
 :::
 
-::: sandbox {editorWidthPercentage=30}
+::: sandbox {coderHeight=512}
+```vue /src/App.vue
+<template>
+  <!-- coder area height: 512px -->
+  <h3>The coder area height: {{ msg }}</h3>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+const msg = ref('512px');
+</script>
+```
+:::
+
+## previewHeight <small style="font-size: 12px; color: var(--vp-c-green);">from @0.3.0</small>
+
+`default: undefined`
+
+::: details markdown code
+<CodePanel :value="previewHeight" />
+:::
+
+::: sandbox {previewHeight=512}
+```vue /src/App.vue
+<template>
+  <h3>Preview Height: {{ msg }}</h3>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+const msg = ref('512px');
+</script>
+```
 :::
 
 ## showNavigator

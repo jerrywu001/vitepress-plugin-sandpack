@@ -88,7 +88,7 @@ const getSandpackFiles = async (props: SandpackProp, slot: Slots) => {
       // @ts-ignore
       const ctx = content ? content[0]?.ctx : {};
       if (ctx && ctx?.slots) {
-        codeItems = ctx.slots.default();
+        codeItems = ctx.slots?.default ? ctx.slots.default() : [];
       }
     }
     for await (const v of codeItems) {
@@ -135,11 +135,10 @@ const getSandpackOptions = (props = {} as SandpackProp) => {
   };
   for (const key in options) {
     if (key in result) {
-      if (key !== 'editorWidthPercentage') {
-        result[key] = parsedBoolean(options[key]);
+      if (['editorWidthPercentage'].includes(key)) {
+        result.editorWidthPercentage = isNaN(Number(options[key])) ? 50 : Number(options[key]);
       } else {
-        result.editorWidthPercentage =
-          isNaN(Number(options.editorWidthPercentage)) ? 50 : Number(options.editorWidthPercentage);
+        result[key] = parsedBoolean(options[key]);
       }
     }
   }

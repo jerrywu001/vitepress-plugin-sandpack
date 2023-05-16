@@ -11,7 +11,9 @@
     }"
     :custom-setup="{
       ...props, // do not forget it
-      deps: { 'vue3-toastify': 'latest' }
+      deps: {
+        'vue3-toastify': 'latest',
+      }
     }"
     :code-options="codeOptions"
   >

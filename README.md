@@ -71,6 +71,8 @@ Language support: `angular` | `react` | `react-ts` | `vanilla` | `vanilla-ts` | 
 
 [Custom usage](https://vitepress-sandbox.js-bridge.com/custom-usage/custom.html)
 
+[vite-templates (from @0.3.0)](https://vitepress-sandbox.js-bridge.com/vite-templates/vite-vue-ts.html)
+
 ## how to use
 
 [online demo](https://stackblitz.com/edit/vitejs-vite-79ocfq)

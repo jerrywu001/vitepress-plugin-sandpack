@@ -22,6 +22,16 @@ const props = defineProps(sandboxProps);
 
 const files = ref<SandpackFiles>({});
 
+const editorVisible = computed(() => parsedBoolean(props.hideEditor) ? 'none' : 'flex');
+
+const previewHeight = computed(() => isNaN(Number(props.previewHeight)) ? undefined : Number(props.previewHeight));
+const previewHeightStyle =
+  computed(() => previewHeight.value ? `${previewHeight.value}px` : 'var(--sp-layout-height)');
+
+const coderHeight = computed(() => isNaN(Number(props.coderHeight)) ? undefined : Number(props.coderHeight));
+const coderHeightStyle =
+  computed(() => coderHeight.value ? `${coderHeight.value}px` : 'var(--sp-layout-height)');
+
 const slots = useSlots();
 const { isDark } = useData();
 
@@ -39,3 +49,43 @@ watch(props, resolveFiles);
 
 onBeforeMount(resolveFiles);
 </script>
+
+<style>
+.sp-layout > .sp-stack {
+  min-width: 100% !important;
+}
+
+.sp-layout > .sp-stack.sp-editor {
+  height: v-bind(coderHeightStyle);
+  display: v-bind(editorVisible);
+}
+
+.sp-layout > .sp-stack.sp-preset-column {
+  height: v-bind(previewHeightStyle);
+}
+
+.sp-resize-handler {
+  display: none !important;
+}
+
+.sp-rtl-layout {
+  flex-flow: wrap-reverse !important;
+}
+
+.sp-preview-actions a {
+  font-weight: initial !important;
+  color: var(--sp-colors-clickable) !important;
+}
+
+.sp-console-item code {
+  background-color: transparent !important;
+}
+
+.sp-preview-actions {
+  display: none !important;
+}
+
+.sp-preset-column:hover .sp-preview-actions {
+  display: flex !important;
+}
+</style>
