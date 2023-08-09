@@ -1,5 +1,6 @@
 {
   "name": "vitepress-plugin-sandpack",
+  "type": "module",
   "version": "1.0.0",
   "description": "use sandpack-vue3 in vitepress as directive.",
   "keywords": [
