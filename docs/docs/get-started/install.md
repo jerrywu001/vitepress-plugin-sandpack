@@ -8,6 +8,14 @@ cd vitepress-project-folder
 npm i vitepress-plugin-sandpack -D
 ```
 
+TIPS: for `pnpm`
+
+you also need:
+
+```bash
+pnpm add markdown-it-container -D
+```
+
 ## Problem: this package is ESM only
 
 When importing a ESM only package by require, the following error happens.

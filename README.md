@@ -13,6 +13,15 @@ Language support: `angular` | `react` | `react-ts` | `vanilla` | `vanilla-ts` | 
   cd project-folder
 
   npm i vitepress-plugin-sandpack -D
+  ```
+
+  TIPS: for `pnpm`
+
+  you need:
+
+  ```bash
+  pnpm add markdown-it-container -D
+  ```
 
 - edit theme config, register global component
 
