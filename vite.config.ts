@@ -15,8 +15,8 @@ export default defineConfig({
     minify: true,
     lib: {
       fileName: (type) => {
-        if (type === 'es') return 'esm/index.js';
-        return 'index.cjs';
+        if (type === 'es') return 'esm/index.mjs';
+        return 'index.js';
       },
       entry: path.resolve(__dirname, 'src/index.ts'),
       formats: ['es', 'cjs'],

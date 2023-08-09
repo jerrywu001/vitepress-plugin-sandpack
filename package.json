@@ -1,6 +1,5 @@
 {
   "name": "vitepress-plugin-sandpack",
-  "type": "module",
   "version": "1.0.1",
   "description": "use sandpack-vue3 in vitepress as directive.",
   "keywords": [
@@ -23,16 +22,27 @@
   },
   "license": "MIT",
   "author": "jerrywu001 <57242263@163.com>",
-  "main": "./dist/esm/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/esm/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/esm/index.js",
+      "import": "./dist/esm/index.mjs",
       "require": "./dist/index.cjs"
     },
-    "./dist/*": "./dist/*",
-    "./package.json": "./package.json"
+    "./*": [
+      "./*",
+      "./*.d.ts"
+    ]
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
   },
   "files": [
     "dist",
