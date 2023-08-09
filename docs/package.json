@@ -1,5 +1,6 @@
 {
   "name": "docs",
+  "type": "module",
   "version": "1.0.0",
   "description": "description for vitepress-plugin-sandpack",
   "scripts": {
@@ -9,6 +10,6 @@
   },
   "devDependencies": {
     "highlight.js": "^11.8.0",
-    "vitepress": "1.0.0-beta.6"
+    "vitepress": "^1.0.0-rc.4"
   }
 }
