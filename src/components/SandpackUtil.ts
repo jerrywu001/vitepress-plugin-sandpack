@@ -98,7 +98,8 @@ const getSandpackFiles = async (props: SandpackProp, slot: Slots) => {
       const { active, hidden, readOnly, path } =
         getFileAttributes(JSON.parse(decodeURIComponent(props.codeOptions as string))[i], props.template);
       const filename = path || getDefaultFileName(props.template);
-      v.children = children.filter((c) => c.type === 'pre');
+      const pre = children.find((c) => c.type === 'pre');
+      v.children = pre ? [pre] : [];
       const html = await renderToString(v);
       div.insertAdjacentHTML('beforeend', html);
       code = div.innerText;
