@@ -10,6 +10,6 @@
   },
   "devDependencies": {
     "highlight.js": "^11.8.0",
-    "vitepress": "^1.0.0-rc.10"
+    "vitepress": "^1.0.0-rc.12"
   }
 }

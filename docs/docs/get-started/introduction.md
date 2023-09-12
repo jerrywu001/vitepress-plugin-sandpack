@@ -6,7 +6,7 @@
 
 **We can use Sandpack as directive in md file.**
 
-It support: `angular` | `react` | `react-ts` | `vanilla` | `vanilla-ts` | `vue` | `vue3` | `vue3-ts` | `svelte` | `solid` | `test-ts` | [vite-templates](/vite-templates/vite-vue-ts).
+It support: `static` | `angular` | `react` | `react-ts` | `vanilla` | `vanilla-ts` | `vue` | `vue3` | `vue3-ts` | `svelte` | `solid` | `test-ts` | [vite-templates](/vite-templates/vite-vue-ts).
 
 ## demo
 
