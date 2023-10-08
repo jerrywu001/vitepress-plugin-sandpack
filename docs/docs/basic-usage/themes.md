@@ -10,7 +10,7 @@ Have multi themes (**Support dark mode**):
 
 ## online preview
 
-<a href="https://sandpack-vue3.js-bridge.com/?path=/story/presets-themes-external--amethyst" target="_blank">online preview</a>
+<a href="https://sandpack-vue3.netlify.app/?path=/story/presets-themes-external--amethyst" target="_blank">online preview</a>
 
 <script setup>
 import customTheme from '../codes/basic-usage/customTheme.ts';

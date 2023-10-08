@@ -17,3 +17,6 @@ src/index.css
 
 __unconfig_vite.config.ts
 .vercel
+
+# Local Netlify folder
+.netlify

@@ -1,4 +1,4 @@
-![](https://www.js-bridge.com/articles/sandpack.png)
+![](https://www.netlify.app/articles/sandpack.png)
 
 # install
 
@@ -76,11 +76,11 @@ Language support: `angular` | `react` | `react-ts` | `vanilla` | `vanilla-ts` | 
 
 # document
 
-[Full document](https://vitepress-sandbox.js-bridge.com)
+[Full document](https://vitepress-sandbox.netlify.app)
 
-[Custom usage](https://vitepress-sandbox.js-bridge.com/custom-usage/custom.html)
+[Custom usage](https://vitepress-sandbox.netlify.app/custom-usage/custom.html)
 
-[vite-templates (from @0.3.0)](https://vitepress-sandbox.js-bridge.com/vite-templates/vite-vue-ts.html)
+[vite-templates (from @0.3.0)](https://vitepress-sandbox.netlify.app/vite-templates/vite-vue-ts.html)
 
 ## how to use
 
@@ -101,4 +101,4 @@ Language support: `angular` | `react` | `react-ts` | `vanilla` | `vanilla-ts` | 
 
 ## use file snippets
 
-[File snippets](https://vitepress-sandbox.js-bridge.com/basic-usage/snippets.html)
+[File snippets](https://vitepress-sandbox.netlify.app/basic-usage/snippets.html)

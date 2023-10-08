@@ -129,6 +129,8 @@ function sidebarConfig() {
         { text: 'vite-vue-ts', link: '/vite-templates/vite-vue-ts' },
         { text: 'vite-react', link: '/vite-templates/vite-react' },
         { text: 'vite-react-ts', link: '/vite-templates/vite-react-ts' },
+        { text: 'vite-preact', link: '/vite-templates/vite-preact' },
+        { text: 'vite-preact-ts', link: '/vite-templates/vite-preact-ts' },
         { text: 'vite-svelte', link: '/vite-templates/vite-svelte' },
         { text: 'vite-svelte-ts', link: '/vite-templates/vite-svelte-ts' },
         { text: 'vite-solid', link: '/vite-templates/vite-solid' },

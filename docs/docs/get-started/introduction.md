@@ -1,6 +1,6 @@
 # vitepress-plugin-sandpack
 
-![](https://www.js-bridge.com/articles/sandpack.png)
+![](https://www.netlify.app/articles/sandpack.png)
 
 <a href="https://www.npmjs.com/package/sandpack-vue3" target="_blank">Sandpack</a> components that give you the power of editable sandboxes that run in the browser. Powered by Sandpack, the online bundler used by <a href="https://codesandbox.io/" target="_blank">CodeSandbox</a>.
 
