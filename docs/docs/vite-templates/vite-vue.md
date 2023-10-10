@@ -1,6 +1,6 @@
 # Online Demos
 
-[Online Demos](https://sandpack-vue3.netlify.app/?path=/story/presets-template--vite-vue)
+[Online Demos](https://sandpack-vue3.js-bridge.com/?path=/story/presets-template--vite-vue)
 
 ## usage <small style="font-size: 12px; color: var(--vp-c-green);">from @0.3.0</small>
 
