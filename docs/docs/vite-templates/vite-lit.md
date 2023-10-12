@@ -1,4 +1,4 @@
-# Online Demos
+# vite-lit demos
 
 [Online Demos](https://sandpack-vue3.js-bridge.com/?path=/docs/presets-template--vite-lit)
 

@@ -9,7 +9,7 @@
     "docs:serve": "vitepress serve docs"
   },
   "devDependencies": {
-    "highlight.js": "^11.8.0",
+    "highlight.js": "^11.9.0",
     "vitepress": "^1.0.0-rc.20"
   }
 }

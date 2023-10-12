@@ -40,7 +40,13 @@ export default defineConfig({
 
   themeConfig: {
     search: {
-      provider: 'local'
+      provider: 'algolia',
+      options: {
+        appId: 'SKCYNAKILD',
+        apiKey: 'fb798fe990d2e20c0c862afd47f919c2',
+        indexName: 'vitepress-sandbox',
+        insights: true, // Optional, automatically send insights when user interacts with search results
+      },
     },
 
     nav: nav(),

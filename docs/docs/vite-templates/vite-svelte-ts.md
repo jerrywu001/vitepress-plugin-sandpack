@@ -1,4 +1,4 @@
-# Online Demos
+# vite-svelte-ts demos
 
 [Online Demos](https://sandpack-vue3.js-bridge.com/?path=/story/presets-template--vite-svelte-ts)
 

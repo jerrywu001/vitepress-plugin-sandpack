@@ -1,0 +1,13 @@
+diff --git a/node_modules/vitepress/dist/client/theme-default/components/VPAlgoliaSearchBox.vue b/node_modules/vitepress/dist/client/theme-default/components/VPAlgoliaSearchBox.vue
+index 0465229..c53eb0c 100644
+--- a/node_modules/vitepress/dist/client/theme-default/components/VPAlgoliaSearchBox.vue
++++ b/node_modules/vitepress/dist/client/theme-default/components/VPAlgoliaSearchBox.vue
+@@ -29,7 +29,7 @@ function update() {
+       ? rawFacetFilters
+       : [rawFacetFilters]
+     ).filter((f) => !f.startsWith('lang:')),
+-    `lang:${lang.value}`
++    // `lang:${lang.value}`
+   ]
+   initialize({
+     ...options,
