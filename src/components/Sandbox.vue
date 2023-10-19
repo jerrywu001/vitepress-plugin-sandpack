@@ -20,13 +20,15 @@ const props = defineProps(sandboxProps);
 
 const files = ref<SandpackFiles>({});
 
-const editorVisible = computed(() => parsedBoolean(props.hideEditor) ? 'none' : 'flex');
+const getOpt = (propName: string) => props[propName] || props?.options?.[propName];
 
-const previewHeight = computed(() => isNaN(Number(props.previewHeight)) ? undefined : Number(props.previewHeight));
+const editorVisible = computed(() => parsedBoolean(getOpt('hideEditor')) ? 'none' : 'flex');
+
+const previewHeight = computed(() => isNaN(Number(getOpt('previewHeight'))) ? undefined : Number(getOpt('previewHeight')));
 const previewHeightStyle =
   computed(() => previewHeight.value ? `${previewHeight.value}px` : 'var(--sp-layout-height)');
 
-const coderHeight = computed(() => isNaN(Number(props.coderHeight)) ? undefined : Number(props.coderHeight));
+const coderHeight = computed(() => isNaN(Number(getOpt('coderHeight'))) ? undefined : Number(getOpt('coderHeight')));
 const coderHeightStyle =
   computed(() => coderHeight.value ? `${coderHeight.value}px` : 'var(--sp-layout-height)');
 
@@ -36,8 +38,8 @@ const isDark = ref(false);
 
 const docsTheme = computed(
   () => isDark.value
-    ? (allThemes[props.darkTheme as Theme] || 'dark')
-    : (allThemes[props.lightTheme as Theme] || 'light'),
+    ? (allThemes[getOpt('darkTheme') as Theme] || 'dark')
+    : (allThemes[getOpt('lightTheme') as Theme] || 'light'),
 );
 
 const resolveFiles = async () => {

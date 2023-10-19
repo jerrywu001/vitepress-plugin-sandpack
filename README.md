@@ -49,6 +49,7 @@ Language support: `angular` | `react` | `react-ts` | `vanilla` | `vanilla-ts` | 
   import { defineConfig } from 'vitepress';
   import container from 'markdown-it-container';
   import { renderSandbox } from 'vitepress-plugin-sandpack';
+  import 'vitepress-plugin-sandpack/dist/style.css';
 
   // rule of 'html tag name' to 'component name'
   // 'sanbox' -> 'Sandbox'
