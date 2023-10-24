@@ -98,8 +98,7 @@ export default {
 ```js
 import { defineConfig } from 'vitepress';
 import container from 'markdown-it-container';
-import { renderSandbox } from 'vitepress-plugin-sandpack';
-import 'vitepress-plugin-sandpack/dist/style.css';
+import { renderSandbox } from 'vitepress-plugin-sandpack';import 'vitepress-plugin-sandpack/dist/style.css';
 
 // rule of 'html tag name' to 'component name'
 // 'sanbox' -> 'Sandbox'

@@ -20,7 +20,7 @@ const props = defineProps(sandboxProps);
 
 const files = ref<SandpackFiles>({});
 
-const getOpt = (propName: string) => props[propName] || props?.options?.[propName];
+const getOpt = (propName: string) => props[propName] ?? props?.options?.[propName];
 
 const editorVisible = computed(() => parsedBoolean(getOpt('hideEditor')) ? 'none' : 'flex');
 
