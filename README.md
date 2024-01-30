@@ -105,3 +105,15 @@ Language support: `angular` | `react` | `react-ts` | `vanilla` | `vanilla-ts` | 
 ## use file snippets
 
 [File snippets](https://vitepress-sandbox.js-bridge.com/basic-usage/snippets.html)
+
+## Sponsor
+
+<p align="center">
+  <h3 align="center">Special Sponsor</h3>
+</p>
+
+<p align="center">
+  <a target="_blank" rel="external dofollow" href="https://www.bnsense.com/">
+    <img alt="special sponsor appwrite" src="https://www.bnsense.com/uploads/LOGO/imgs/logo_1704355682323.png" width="300">
+  </a>
+</p>
